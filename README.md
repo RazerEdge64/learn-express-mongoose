@@ -56,6 +56,7 @@ The enum property defines an allowed set of values for the field. Any value not 
 
 5. Define a function insertMany(entries) in the above script, which takes a list of objects {eggs: N, drink: ‘some drink’} and inserts each entry in entries in the MongoDB collection my_db.
 
+```
 async function insertMany(entries) {
   try {  
     const insertedEntries = [];
@@ -63,11 +64,11 @@ async function insertMany(entries) {
       const result = await Breakfast.create(entry);
       insertedEntries.push(result);
     });
-
-    console.log(`Inserted ${insertedEntries.length} entries into the 'BreakFastSchema' collection.`);
+  console.log("Inserted `${insertedEntries.length}` entries into the 'BreakFastSchema' collection.")
   } catch (error) {
     console.error('Error inserting entries:', error);
   }
+```
 
 # The Library App
 
